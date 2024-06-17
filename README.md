@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+## Installation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Before you can run this project, you need to have `pnpm` installed. If you don't have it, you can install it using `npm`:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install -g pnpm
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the Project
+To run this project, follow these steps:
+1. Clone the repository:
+```bash
+git clone https://github.com/roman-diukachov/web-site-sample.git
+```
+2. Go to the project directory:
+```bash
+cd web-site-sample
+```
+3. Install the dependencies:
+```bash
+pnpm install
+```
+4. Run the project:
+```bash
+pnpm dev
+```
