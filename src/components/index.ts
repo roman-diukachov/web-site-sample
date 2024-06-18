@@ -1,3 +1,5 @@
 export { Content } from './Content';
-export { TopBar } from './TopBar';
+export { Footer } from './Footer';
+export { Header } from './Header';
+export { SearchDetailsGrid } from './SearchDetailsGrid';
 export { Sidebar } from './Sidebar';

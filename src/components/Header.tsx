@@ -1,6 +1,6 @@
-import { SIDEBAR_WIDTH } from '@/constants';
 import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import type { IconButtonProps } from '@mui/material';
 import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import type { FC } from 'react';
@@ -10,18 +10,13 @@ interface Props {
   toggleSidebar: () => void;
 }
 
-export const TopBar: FC<Props> = ({ sideBarOpened, toggleSidebar }) => (
+export const Header: FC<Props> = ({ sideBarOpened, toggleSidebar }) => (
   <AppBar position="fixed">
     <Toolbar>
-      <GeneralIconButton
-        aria-label="toggle sidebar button"
-        onClick={toggleSidebar}
-        sx={{ ...(sideBarOpened && { display: 'none' }) }}
-      >
-        <MenuIcon />
+      <GeneralIconButton aria-label="toggle sidebar button" onClick={toggleSidebar}>
+        {sideBarOpened ? <MenuOpenIcon /> : <MenuIcon />}
       </GeneralIconButton>
-       f{/*4px for pretty UI*/}
-      <Typography variant="h6" sx={{ flexGrow: 1, ...(sideBarOpened && { marginLeft: `${SIDEBAR_WIDTH + 4}px` }) }}>
+      <Typography variant="h6" sx={{ flexGrow: 1 }}>
         Bluespine.io
       </Typography>
       <GeneralIconButton aria-label="logout button">
