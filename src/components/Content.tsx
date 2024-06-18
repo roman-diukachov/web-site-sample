@@ -15,8 +15,7 @@ export const Content: FC<Props> = ({ sideBarOpened, children }) => (
     sx={{
       pl: !sideBarOpened ? `${ONE_SIDE_PADDING}px` : `${SIDEBAR_WIDTH + ONE_SIDE_PADDING}px`,
       pr: `${ONE_SIDE_PADDING}px`,
-      maxWidth: '100vw',
-      // maxWidth: '100vw',
+      width: '100%',
       minHeight: '50vw',
       transition: 'all .2s',
     }}

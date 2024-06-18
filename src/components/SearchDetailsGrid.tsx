@@ -18,7 +18,13 @@ export const SearchDetailsGrid: FC<Props> = ({ rows, columns }) => {
   };
 
   return (
-    <Box>
+    <Box
+      sx={{
+        height: 'calc(100% - 64px)',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <TextField
         label="Search in every field"
         variant="outlined"
@@ -27,11 +33,11 @@ export const SearchDetailsGrid: FC<Props> = ({ rows, columns }) => {
         fullWidth
         margin="normal"
       />
-      <Paper sx={{ height: 400, width: '100vw', mt: '8px' }} elevation={2}>
+      <Paper sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }} elevation={2}>
         <DataGridPremium columns={columns} rows={rows} search={search} />
       </Paper>
-      <Paper elevation={1}>
-        <Box mt={2} p={2} border={1} borderColor="grey.400">
+      <Paper elevation={1} sx={{mb: 2}}>
+        <Box  p={2} border={1} borderColor="grey.400">
           Details
         </Box>
       </Paper>
@@ -45,6 +51,7 @@ interface DataGridPremiumProps extends Props {
 
 const DataGridPremium: FC<DataGridPremiumProps> = ({ columns, rows, search }) => (
   <MuiDataGridPremium
+    style={{ paddingBottom: '16px', flexDirection: 'column', display: 'flex', height: '100%' }}
     disableMultipleRowSelection
     columns={columns}
     rows={

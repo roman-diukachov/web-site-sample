@@ -1,0 +1,4 @@
+$sidebar-width: 240px;
+$one-side-padding: 24px;
+$one-padding-with-sidebar: $one-side-padding + $sidebar-width;
+$x-padding-with-sidebar: $one-side-padding + $one-side-padding + $sidebar-width; // left + right + sidebar padding
