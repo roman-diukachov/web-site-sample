@@ -8,6 +8,7 @@ export const EmployeesPage: FC = () => {
 
   return (
     <SearchDetailsGrid
+      pageCaption="Employees"
       rows={rows}
       columns={columns}
       searchBarLabel="Search in the First Name, Last name, Hire Date columns"

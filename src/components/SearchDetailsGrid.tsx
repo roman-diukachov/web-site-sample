@@ -1,5 +1,5 @@
 import type { Employer, Patient } from '@/types';
-import { Box, Paper, TextField } from '@mui/material';
+import { Box, Paper, TextField, Typography } from '@mui/material';
 import type { GridColDef } from '@mui/x-data-grid-premium';
 import { useGridApiRef } from '@mui/x-data-grid-premium';
 import { DataGridPremium as MuiDataGridPremium } from '@mui/x-data-grid-premium/DataGridPremium/DataGridPremium';
@@ -7,16 +7,17 @@ import type { ChangeEvent, FC } from 'react';
 import { useEffect, useState } from 'react';
 
 interface Props {
+  pageCaption: string;
   rows: Employer[] | Patient[];
   columns: GridColDef[];
   searchBarLabel: string;
-  searchBarColumns: string[];
+  searchBarColumns: Array<keyof Employer | keyof Patient>;
   setSelectedRow?: (_row: Employer | Patient) => void;
 }
 
 const COLUMNS_AMOUNT = 15;
 
-export const SearchDetailsGrid: FC<Props> = ({ rows, columns, searchBarLabel, searchBarColumns }) => {
+export const SearchDetailsGrid: FC<Props> = ({pageCaption, rows, columns, searchBarLabel, searchBarColumns }) => {
   const [search, setSearch] = useState('');
   const [setSelectedRow] = useState<Employer | Patient>();
 
@@ -32,14 +33,27 @@ export const SearchDetailsGrid: FC<Props> = ({ rows, columns, searchBarLabel, se
         flexDirection: 'column',
       }}
     >
-      <TextField
-        label={searchBarLabel}
-        variant="outlined"
-        value={search}
-        onChange={handleSearchChange}
-        fullWidth
-        margin="normal"
-      />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          width: '100%',
+          alignItems: 'center',
+        }}
+      >
+        <Typography variant="h3" sx={{ mt: '8px' , flexGrow:1 }}>
+          {pageCaption}
+        </Typography>
+        <TextField
+          label={searchBarLabel}
+          variant="outlined"
+          value={search}
+          onChange={handleSearchChange}
+          fullWidth
+          margin="normal"
+          sx={{width: '60%',}}
+        />
+      </Box>
       <Paper
         sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }}
         elevation={3}
