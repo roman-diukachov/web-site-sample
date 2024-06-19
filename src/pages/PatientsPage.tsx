@@ -8,6 +8,7 @@ export const PatientsPage: FC = () => {
 
   return (
     <SearchDetailsGrid
+      pageCaption="Patients"
       rows={rows}
       columns={columns}
       searchBarLabel="Search in the First Name, Last name, Age columns"
