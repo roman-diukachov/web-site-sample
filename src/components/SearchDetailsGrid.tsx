@@ -14,7 +14,7 @@ interface Props<T> {
   searchBarLabel: string;
   searchBarColumns: Array<keyof Employer | keyof Patient>;
   setSelectedRow: (_row: T) => void;
-  selectedRow: Employer | Patient;
+  selectedRow?: Employer | Patient;
 }
 
 const COLUMNS_AMOUNT = 15;
@@ -26,7 +26,6 @@ export const SearchDetailsGrid = <T extends object>({
   searchBarLabel,
   searchBarColumns,
   setSelectedRow,
-  selectedRow,
 }: Props<T>) => {
   const [search, setSearch] = useState('');
 
