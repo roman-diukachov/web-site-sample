@@ -19,6 +19,7 @@ export const EmployeesPage: FC = () => {
         searchBarLabel="Search in the First Name, Last name, Hire Date columns"
         searchBarColumns={['firstName', 'lastName', 'hireDate']}
         setSelectedRow={setSelectedRow}
+        selectedRow={selectedRow}
       />
       {selectedRow && <EmployeeDetails selectedRow={selectedRow} />}
     </Box>

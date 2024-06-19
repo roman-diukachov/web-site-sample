@@ -19,6 +19,7 @@ export const PatientsPage: FC = () => {
         searchBarLabel="Search in the First Name, Last name, Age columns"
         searchBarColumns={['firstName', 'lastName', 'age']}
         setSelectedRow={setSelectedRow}
+        selectedRow={selectedRow}
       />
       {selectedRow && <PatientDetails selectedRow={selectedRow} />}
     </Box>
