@@ -14,7 +14,7 @@ interface Props<T> {
   searchBarLabel: string;
   searchBarColumns: Array<keyof Employer | keyof Patient>;
   setSelectedRow: (_row: T) => void;
-  selectedRow: Employer | Patient;
+  selectedRow?: Employer | Patient;
 }
 
 const COLUMNS_AMOUNT = 15;
@@ -58,7 +58,8 @@ export const SearchDetailsGrid = <T extends object>({
         />
       </Box>
       <Paper
-        sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }}
+        // sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }}
+        className={`table-container ${selectedRow ? ' is-open' : ''}`}
         elevation={3}
       >
         <DataGridPremium<T>
@@ -79,7 +80,13 @@ interface DataGridPremiumProps<T> extends Props<T> {
   search: string;
 }
 
-const DataGridPremium = <T extends object>({ columns, rows, setSelectedRow, searchBarColumns, search }: DataGridPremiumProps<T>) => {
+const DataGridPremium = <T extends object>({
+  columns,
+  rows,
+  setSelectedRow,
+  searchBarColumns,
+  search,
+}: DataGridPremiumProps<T>) => {
   const gridApiRef = useGridApiRef();
   // const filteredRows = rows.filter((row) =>
   //   searchBarColumns.some(
