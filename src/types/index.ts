@@ -15,6 +15,21 @@ export type Employer = {
   lastPromotion: string;
   nextReview: string;
   employmentStatus: string;
+  dateOfBirth: string;
+  address: string;
+  phoneNumber: string;
+  emergencyContact: string;
+  startDate: string;
+  endDate: string;
+  jobDescription: string;
+  skills: string;
+  education: string;
+  certifications: string;
+  languages: string;
+  nationality: string;
+  ethnicity: string;
+  disabilityStatus: string;
+  veteranStatus: string;
 };
 
 export type Patient = {
@@ -33,4 +48,17 @@ export type Patient = {
   insuranceProvider: string;
   policyNumber: string;
   medicalHistory: string;
+  emergencyContact: string;
+  allergies: string;
+  bloodType: string;
+  height: string;
+  weight: string;
+  bmi: string;
+  smokingStatus: string;
+  alcoholUse: string;
+  exerciseFrequency: string;
+  diet: string;
+  familyHistory: string;
+  immunizationStatus: string;
+  lastCheckup: string;
 };

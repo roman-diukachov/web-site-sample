@@ -34,6 +34,19 @@ export const generatePatientMockData = () => {
       insuranceProvider: `Insurance Provider ${i + 1}`,
       policyNumber: `Policy Number ${i + 1}`,
       medicalHistory: `Medical History ${i + 1}`,
+      emergencyContact: `Emergency Contact ${i + 1}`,
+      allergies: `Allergies ${i + 1}`,
+      bloodType: `Blood Type ${i + 1}`,
+      height: `${Math.floor(Math.random() * 60) + 150} cm`,
+      weight: `${Math.floor(Math.random() * 60) + 40} kg`,
+      bmi: `${Math.floor(Math.random() * 10) + 15}`,
+      smokingStatus: Math.random() > 0.5 ? 'Smoker' : 'Non-Smoker',
+      alcoholUse: Math.random() > 0.5 ? 'Yes' : 'No',
+      exerciseFrequency: `${Math.floor(Math.random() * 7)} times a week`,
+      diet: `Diet ${i + 1}`,
+      familyHistory: `Family History ${i + 1}`,
+      immunizationStatus: `Immunization Status ${i + 1}`,
+      lastCheckup: randomDate(new Date(2020, 0, 1), new Date()).toISOString(),
     });
   }
   return rows;
@@ -51,6 +64,21 @@ export const generateEmployeeMockData = () => {
       manager: `Manager ${i + 1}`,
       location: `Location ${i + 1}`,
       company: `Company ${i + 1}`,
+      dateOfBirth: randomDate(new Date(1970, 0, 1), new Date(2003, 0, 1)).toISOString(),
+      address: `Address ${i + 1}`,
+      phoneNumber: `Phone Number ${i + 1}`,
+      emergencyContact: `Emergency Contact ${i + 1}`,
+      startDate: randomDate(new Date(2020, 0, 1), new Date()).toISOString(),
+      endDate: randomDate(new Date(2020, 0, 1), new Date()).toISOString(),
+      jobDescription: `Job Description ${i + 1}`,
+      skills: `Skills ${i + 1}`,
+      education: `Education ${i + 1}`,
+      certifications: `Certifications ${i + 1}`,
+      languages: `Languages ${i + 1}`,
+      nationality: `Nationality ${i + 1}`,
+      ethnicity: `Ethnicity ${i + 1}`,
+      disabilityStatus: `Disability Status ${i + 1}`,
+      veteranStatus: `Veteran Status ${i + 1}`,
     });
   }
   return rows;
