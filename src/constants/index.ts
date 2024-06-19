@@ -1,4 +1,8 @@
+import type { Employer, Patient } from '@/types';
 import type { GridColDef } from '@mui/x-data-grid-premium';
+
+// TODO: this file will not exist in such a huge form
+//  because backand will cover such settings
 
 export const SIDEBAR_WIDTH = 240;
 
@@ -69,3 +73,83 @@ export const patientsGridColumns: GridColDef[] = [
   { field: 'dosage', headerName: 'Dosage' },
   { field: 'frequency', headerName: 'Frequency' },
 ];
+
+export const employeeDetails: { section: string; fields: Array<keyof Employer> }[] = [
+  {
+    section: 'Personal Information',
+    fields: [
+      'firstName',
+      'lastName',
+      'email',
+      'dateOfBirth',
+      'address',
+      'phoneNumber',
+      'emergencyContact',
+      'nationality',
+      'ethnicity',
+      'disabilityStatus',
+      'veteranStatus',
+    ],
+  },
+  {
+    section: 'Job Details',
+    fields: [
+      'jobTitle',
+      'department',
+      'manager',
+      'location',
+      'company',
+      'hireDate',
+      'startDate',
+      'endDate',
+      'jobDescription',
+    ],
+  },
+  {
+    section: 'Compensation',
+    fields: ['salary', 'bonus'],
+  },
+  {
+    section: 'Performance',
+    fields: ['performanceRating', 'lastPromotion', 'nextReview'],
+  },
+  {
+    section: 'Additional Information',
+    fields: ['skills', 'education', 'certifications', 'languages'],
+  },
+];
+
+export const patientDetails: { section: string; fields: Array<keyof Patient> }[] = [
+  {
+    section: 'Personal Information',
+    fields: ['firstName', 'lastName', 'age', 'gender', 'emergencyContact'],
+  },
+  {
+    section: 'Diagnosis and Medication',
+    fields: ['diagnosis', 'medication', 'dosage', 'frequency', 'physician', 'lastVisit', 'nextVisit'],
+  },
+  {
+    section: 'Medical History and Vital',
+    fields: [
+      'medicalHistory',
+      'allergies',
+      'bloodType',
+      'height',
+      'weight',
+      'bmi',
+      'smokingStatus',
+      'alcoholUse',
+      'exerciseFrequency',
+      'diet',
+      'familyHistory',
+      'immunizationStatus',
+      'lastCheckup',
+    ],
+  },
+  {
+    section: 'Insurance Information',
+    fields: ['insuranceProvider', 'policyNumber'],
+  },
+];
+
+

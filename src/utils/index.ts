@@ -1,5 +1,24 @@
 import type { Employer, Patient } from '@/types';
 
+export function filterRows<T extends object>(
+  rows: T[],
+  searchBarColumns: Array<keyof Employer | keyof Patient>,
+  search: string
+): T[] {
+  return rows.filter((row) =>
+    searchBarColumns.some(
+      (field) =>
+        field in row &&
+        (typeof row[field as keyof T] === 'string' ? (row[field as keyof T] as string).toLowerCase() : '').includes(
+          search.toLowerCase()
+        )
+    )
+  );
+}
+
+// TODO: Update with generic type
+export const isEmployerType = (obj: Employer | Patient): obj is Employer => (obj as Employer).jobTitle !== undefined;
+
 const randomDate = (start: Date, end: Date) =>
   new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
