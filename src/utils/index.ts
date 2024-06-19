@@ -19,7 +19,6 @@ const generateCommonData = (i: number) => ({
 });
 
 export const generatePatientMockData = () => {
-  console.log('generatePatientMockData - 2');
   const numRows = 10000;
   const rows: Patient[] = [];
   for (let i = 0; i < numRows; i++) {
@@ -41,8 +40,6 @@ export const generatePatientMockData = () => {
 };
 
 export const generateEmployeeMockData = () => {
-  console.log('generateEmployeeMockData - 1');
-
   const numRows = 10000;
   const rows: Employer[] = [];
   for (let i = 0; i < numRows; i++) {

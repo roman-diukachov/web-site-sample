@@ -6,7 +6,5 @@ import type { FC } from 'react';
 export const EmployeesPage: FC = () => {
   const rows = useData()?.employees;
 
-  console.log('employees', rows);
-
   return <SearchDetailsGrid rows={rows} columns={columns} />;
 };

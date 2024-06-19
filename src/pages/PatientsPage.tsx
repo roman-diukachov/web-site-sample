@@ -6,7 +6,5 @@ import type { FC } from 'react';
 export const PatientsPage: FC = () => {
   const rows = useData()?.patients;
 
-  console.log('patients', rows);
-
   return <SearchDetailsGrid rows={rows} columns={columns} />;
 };

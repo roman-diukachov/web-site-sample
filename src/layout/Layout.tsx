@@ -14,7 +14,7 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <CssBaseline />
       <Header sideBarOpened={sideBarOpened} toggleSidebar={toggleSidebar} />
-      {/* 58 and 64 px - the <Toolbar> heights, TODO FIX: add dynamic getting height  */}
+      {/* 64 px - the <Toolbar> heights, TODO FIX: add dynamic getting height  */}
       <Box sx={{ display: 'flex', flexGrow: 1, pt: '64px', pb: '64px' }}>
         <Sidebar sideBarOpened={sideBarOpened} />
         <Content sideBarOpened={sideBarOpened}>{children}</Content>
