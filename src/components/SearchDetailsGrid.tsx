@@ -9,10 +9,14 @@ import { useEffect, useState } from 'react';
 interface Props {
   rows: Employer[] | Patient[];
   columns: GridColDef[];
+  searchBarLabel: string;
+  searchBarColumns: string[];
   setSelectedRow?: (_row: Employer | Patient) => void;
 }
 
-export const SearchDetailsGrid: FC<Props> = ({ rows, columns }) => {
+const COLUMNS_AMOUNT = 15;
+
+export const SearchDetailsGrid: FC<Props> = ({ rows, columns, searchBarLabel, searchBarColumns }) => {
   const [search, setSearch] = useState('');
   const [setSelectedRow] = useState<Employer | Patient>();
 
@@ -29,7 +33,7 @@ export const SearchDetailsGrid: FC<Props> = ({ rows, columns }) => {
       }}
     >
       <TextField
-        label="Search in every field"
+        label={searchBarLabel}
         variant="outlined"
         value={search}
         onChange={handleSearchChange}
@@ -40,7 +44,13 @@ export const SearchDetailsGrid: FC<Props> = ({ rows, columns }) => {
         sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }}
         elevation={3}
       >
-        <DataGridPremium columns={columns} rows={rows} search={search} setSelectedRow={setSelectedRow} />
+        <DataGridPremium
+          columns={columns}
+          rows={rows}
+          search={search}
+          setSelectedRow={setSelectedRow}
+          searchBarColumns={searchBarColumns}
+        />
       </Paper>
       <Paper elevation={3} sx={{ mb: 2 }}>
         <TextField label="Details" placeholder="DetailsDetails" disabled={true} fullWidth />
@@ -53,8 +63,8 @@ interface DataGridPremiumProps extends Props {
   search: string;
 }
 
-const DataGridPremium: FC<DataGridPremiumProps> = ({ columns, rows, search, setSelectedRow }) => {
-  const columnsForAutosize: string[] = columns.map((column) => column.field);
+const DataGridPremium: FC<DataGridPremiumProps> = ({ columns, rows, setSelectedRow, searchBarColumns, search }) => {
+  const columnsForAutosize: string[] = columns.slice(0, COLUMNS_AMOUNT).map((column) => column.field);
   const gridApiRef = useGridApiRef();
   const autoscrollColumnsOptions = {
     columns: columnsForAutosize,
@@ -85,12 +95,14 @@ const DataGridPremium: FC<DataGridPremiumProps> = ({ columns, rows, search, setS
     <MuiDataGridPremium
       style={{ paddingBottom: '16px', flexDirection: 'column', display: 'flex', height: '100%' }}
       disableMultipleRowSelection
-      columns={columns}
-      // CONCERN: if you want to search in every column the table filtering will be reduced and looks slow
+      columns={columns.slice(0, COLUMNS_AMOUNT)}
       rows={
         rows &&
         rows.filter((row) =>
-          Object.values(row).some((value) => value.toString().toLowerCase().includes(search.toLowerCase()))
+          searchBarColumns.some(
+            (field) =>
+              field in row && row[field as keyof typeof row].toString().toLowerCase().includes(search.toLowerCase())
+          )
         )
       }
       apiRef={gridApiRef}
