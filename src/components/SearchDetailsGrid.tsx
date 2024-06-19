@@ -26,6 +26,7 @@ export const SearchDetailsGrid = <T extends object>({
   searchBarLabel,
   searchBarColumns,
   setSelectedRow,
+  selectedRow
 }: Props<T>) => {
   const [search, setSearch] = useState('');
 
