@@ -1,6 +1,7 @@
 import { patientDetails } from '@/constants';
 import type { Employer, Patient } from '@/types';
-import { isEmployerType } from '@/utils';
+
+import { isEmployerType } from '@/utils/tables.ts';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, Box } from '@mui/material';
 import type { FC } from 'react';

@@ -1,6 +1,6 @@
 import { DataProvider } from '@/contexts';
 import { Layout } from '@/layout';
-import { EmployeesPage, PatientsPage } from '@/pages';
+import { EmployeesPage, PatientsPage, TimelinePage } from '@/pages';
 import { useAppTheme } from '@/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import type { FC } from 'react';
@@ -14,6 +14,7 @@ export const App: FC = () => (
           <Routes>
             <Route path="/" element={<EmployeesPage />} />
             <Route path="/patients" element={<PatientsPage />} />
+            <Route path="/timeline" element={<TimelinePage />} />
           </Routes>
         </Layout>
       </DataProvider>

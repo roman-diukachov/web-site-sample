@@ -62,3 +62,30 @@ export type Patient = {
   immunizationStatus: string;
   lastCheckup: string;
 };
+
+export type TimelineRecord = {
+  id: string;
+  dob: string;
+  gender: string;
+  allowed: string;
+  benefit: string;
+  billing_class: string;
+  charges: string;
+  code: string;
+  copay: string;
+  dos_from: string | Date;
+  dx1: string;
+  dx2: string;
+  line: string;
+  patient_id: string;
+  rend_provider_id: string;
+  revcode: string;
+  units: string;
+};
+
+export interface TimelineCardProps {
+  date: string;
+  totalAllowed: number;
+  codes: string[];
+  diagnostics: string[];
+}

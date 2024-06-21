@@ -6,5 +6,9 @@ export { Header } from './Header';
 export { PatientDetails } from './PatientDetails';
 export { SearchDetailsGrid } from './SearchDetailsGrid';
 export { Sidebar } from './Sidebar';
-
-
+export { TimelineCard } from './TimelineCard';
+export { TimelineCardList } from './TimelineCardList';
+export { TimelineDiagnosticsList } from './TimelineDiagnosticsList';
+export { TimelineForCards } from './TimelineForCards';
+export { TimelineOrientationSwitcher } from './TimelineOrientationSwitcher';
+export { TimelineTagsList } from './TimelineTagsList';

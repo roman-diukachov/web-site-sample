@@ -1,7 +1,16 @@
 import { SIDEBAR_WIDTH } from '@/constants';
 import BadgeIcon from '@mui/icons-material/Badge';
 import PersonIcon from '@mui/icons-material/Person';
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText as MuiListItemText, styled } from '@mui/material';
+import SchemaIcon from '@mui/icons-material/Schema';
+import {
+  Divider,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText as MuiListItemText,
+  styled,
+} from '@mui/material';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -39,6 +48,15 @@ export const Sidebar: FC<Props> = ({ sideBarOpened }) => (
             <PersonIcon />
           </ListItemIcon>
           <ListItemText primary="Patients" />
+        </ListItemButton>
+      </Link>
+      <Divider />
+      <Link to="/timeline">
+        <ListItemButton>
+          <ListItemIcon>
+            <SchemaIcon />
+          </ListItemIcon>
+          <ListItemText primary="Patient timeline" />
         </ListItemButton>
       </Link>
     </List>

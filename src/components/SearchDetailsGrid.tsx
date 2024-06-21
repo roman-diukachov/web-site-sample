@@ -1,5 +1,6 @@
 import type { Employer, Patient } from '@/types';
-import { filterRows } from '@/utils';
+
+import { filterRows } from '@/utils/tables.ts';
 import { Box, Paper, TextField, Typography } from '@mui/material';
 import type { GridColDef } from '@mui/x-data-grid-premium';
 import { useGridApiRef } from '@mui/x-data-grid-premium';
