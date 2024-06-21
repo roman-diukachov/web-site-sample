@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Header: FC<Props> = ({ sideBarOpened, toggleSidebar }) => (
-  <AppBar position="fixed">
+  <AppBar position="static">
     <Toolbar>
       <GeneralIconButton aria-label="toggle sidebar button" onClick={toggleSidebar}>
         {sideBarOpened ? <MenuOpenIcon /> : <MenuIcon />}

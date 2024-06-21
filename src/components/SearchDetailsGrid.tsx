@@ -1,6 +1,5 @@
 import type { Employer, Patient } from '@/types';
-
-import { filterRows } from '@/utils/tables.ts';
+import { filterRows } from '@/utils';
 import { Box, Paper, TextField, Typography } from '@mui/material';
 import type { GridColDef } from '@mui/x-data-grid-premium';
 import { useGridApiRef } from '@mui/x-data-grid-premium';
@@ -37,14 +36,7 @@ export const SearchDetailsGrid = <T extends object>({
 
   return (
     <>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          width: '100%',
-          alignItems: 'center',
-        }}
-      >
+      <Box className="page-header">
         <Typography variant="h3" sx={{ mt: '8px', flexGrow: 1 }}>
           {pageCaption}
         </Typography>
@@ -59,7 +51,6 @@ export const SearchDetailsGrid = <T extends object>({
         />
       </Box>
       <Paper
-        // sx={{ flex: '1 1 auto', height: 400, marginBottom: '16px', overflowY: 'auto', width: '100%', mt: '8px' }}
         className={`table-container ${selectedRow ? ' is-open' : ''}`}
         elevation={3}
       >

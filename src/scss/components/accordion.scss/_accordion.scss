@@ -1,0 +1,29 @@
+.details-row {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  &:not(:last-of-type) {
+    box-shadow: 0 10px 5px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.summary-title {
+  width: 100%;
+  padding: 0 10px;
+  font-weight: 600;
+  opacity: .8;
+  .Mui-expanded & {
+    box-shadow: 0 10px 7px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.details-field-title {
+  text-transform: capitalize;
+  font-weight: 600;
+  opacity: 0.7;
+  width: 25%;
+}
+
+.MuiAccordionSummary-content {
+  margin: 6px 0 !important;
+}

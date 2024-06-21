@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography } from '@mui/material';
 import type { FC } from 'react';
 
 export const Footer: FC = () => (
-  <AppBar component="footer" position="fixed" sx={{ top: 'auto', bottom: 0, left: 0 }}>
+  <AppBar component="footer" position="static">
     <Toolbar
       sx={{
         display: 'flex',

@@ -75,7 +75,11 @@ export const prepareCardViewData = (data: TimelineRecord[]): TimelineCardProps[]
       }
 
       acc[date].totalAllowed += Number(item.allowed);
-      acc[date].codes = [...acc[date].codes, item.code];
+
+      if (item.code && item.code.trim() !== '') {
+        acc[date].codes = [...acc[date].codes, item.code];
+      }
+
       if (item.dx1 && !acc[date].diagnostics.includes(item.dx1)) {
         acc[date].diagnostics.push(item.dx1);
       }
@@ -87,8 +91,6 @@ export const prepareCardViewData = (data: TimelineRecord[]): TimelineCardProps[]
     },
     {} as Record<string, { totalAllowed: number; codes: string[]; diagnostics: string[] }>
   );
-
-  console.log('!!', aggregatedData);
 
   // Convert the aggregated data to an array of objects
   return Object.entries(aggregatedData).map(([date, { totalAllowed, codes, diagnostics }]) => ({

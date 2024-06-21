@@ -11,7 +11,7 @@ export const PatientsPage: FC = () => {
   const [selectedRow, setSelectedRow] = useState<Patient>();
 
   return (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box className="page-container">
       <SearchDetailsGrid
         pageCaption="Patients"
         rows={rows}

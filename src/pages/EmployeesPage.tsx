@@ -11,7 +11,7 @@ export const EmployeesPage: FC = () => {
   const [selectedRow, setSelectedRow] = useState<Employer>();
 
   return (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box className="page-container">
       <SearchDetailsGrid
         pageCaption="Employees"
         rows={rows}
