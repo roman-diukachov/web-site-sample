@@ -4,7 +4,8 @@ export const filterRows = <T extends object>(
   rows: T[],
   searchBarColumns: Array<keyof Employer | keyof Patient>,
   search: string
-): T[] => rows.filter((row) =>
+): T[] =>
+  rows.filter((row) =>
     searchBarColumns.some(
       (field) =>
         field in row &&
@@ -16,8 +17,10 @@ export const filterRows = <T extends object>(
 
 // TODO: Update with generic type
 export const isEmployerType = (obj: Employer | Patient): obj is Employer => (obj as Employer).jobTitle !== undefined;
+
 const randomDate = (start: Date, end: Date) =>
   new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+
 const generateCommonData = (i: number) => ({
   id: i + 1,
   firstName: `First Name ${i + 1}`,
@@ -32,8 +35,9 @@ const generateCommonData = (i: number) => ({
   nextReview: randomDate(new Date(2020, 0, 1), new Date()).toISOString(),
   employmentStatus: Math.random() > 0.5 ? 'Full-Time' : 'Part-Time',
 });
+
 export const generatePatientMockData = () => {
-  const numRows = 10;
+  const numRows = 10000;
   const rows: Patient[] = [];
   for (let i = 0; i < numRows; i++) {
     rows.push({
@@ -65,8 +69,9 @@ export const generatePatientMockData = () => {
   }
   return rows;
 };
+
 export const generateEmployeeMockData = () => {
-  const numRows = 10;
+  const numRows = 10000;
   const rows: Employer[] = [];
   for (let i = 0; i < numRows; i++) {
     rows.push({
