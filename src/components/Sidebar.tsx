@@ -1,6 +1,6 @@
-import SchemaIcon from '@mui/icons-material/Schema';
 import BadgeIcon from '@mui/icons-material/Badge';
 import PersonIcon from '@mui/icons-material/Person';
+import SchemaIcon from '@mui/icons-material/Schema';
 import {
   Divider,
   Drawer,
