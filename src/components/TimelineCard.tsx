@@ -1,5 +1,4 @@
-import { TimelineCardList, TimelineTagsList } from '@/components';
-import { TimelineDiagnosticsList } from '@/components';
+import { TimelineCardList, TimelineDiagnosticsList, TimelineTagsList } from '@/components';
 import type { TimelineCardProps } from '@/types';
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material';
 
@@ -7,21 +6,18 @@ export const TimelineCard = ({ item }: { item: TimelineCardProps }) => {
   const { date, totalAllowed, codes, diagnostics } = item;
 
   return (
-    <Card sx={{ height: 350 }}>
+    <Card className="timeline-card">
       <CardContent>
-        <Box sx={{ display: 'flex', flexDirection: 'row', mt: 2 }}>
+        <Box className="d-flex f-row" sx={{ mt: 2 }}>
           <Typography variant="h5" color="text.secondary" gutterBottom>
             {date}
           </Typography>
-          <Typography sx={{ flexGrow: 1 }} variant="h4" color={totalAllowed > 5000 ? 'red' : 'black'}>
+          <Typography className="text-end f-grow1" variant="h4" color={totalAllowed > 5000 ? 'red' : 'black'}>
             {totalAllowed > 0 ? `$${totalAllowed}` : totalAllowed}
           </Typography>
         </Box>
-
-        <TimelineCardList codes={codes} />
-
+        <TimelineCardList codes={codes} /> {/*TODO: update the UI about to add the scrollbar visibly always*/}
         <TimelineDiagnosticsList diagnostics={diagnostics} />
-
         <Divider />
         <TimelineTagsList codes={codes} />
       </CardContent>

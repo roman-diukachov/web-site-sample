@@ -1,0 +1,24 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-list {
+  max-width: 80%;
+  width: 100%;
+}
+
+.timeline-card {
+  height: 350px;
+}
+
+.codes-box {
+  width: 300px;
+}
+
+.codes-link {
+  text-decoration: none !important;
+  width: 100%;
+}

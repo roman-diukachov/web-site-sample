@@ -12,13 +12,7 @@ export const TimelineTagsList: FC<Props> = ({ codes }) => {
   const tags = getTagTitles(codes, codeRanges).filter(Boolean);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        mt: 2,
-      }}
-    >
+    <Box className="d-flex f-row" sx={{mt: 2}} >
       <SellIcon sx={{ alignSelf: 'center'}} />
       {tags.map((tag, index) => (
         <Chip label={tag} key={index} sx={{ml:1}} color='primary'/>
