@@ -1,7 +1,6 @@
-import { SIDEBAR_WIDTH } from '@/constants';
+import SchemaIcon from '@mui/icons-material/Schema';
 import BadgeIcon from '@mui/icons-material/Badge';
 import PersonIcon from '@mui/icons-material/Person';
-import SchemaIcon from '@mui/icons-material/Schema';
 import {
   Divider,
   Drawer,
@@ -21,15 +20,7 @@ interface Props {
 export const Sidebar: FC<Props> = ({ sideBarOpened }) => (
   <Drawer
     variant="persistent"
-    sx={{
-      flexShrink: 0,
-      [`& .MuiDrawer-paper`]: {
-        width: SIDEBAR_WIDTH,
-        boxSizing: 'border-box',
-        top: '64px',
-        height: 'calc(100% - 128px)',
-      },
-    }}
+    className="sidebar"
     anchor="left"
     open={sideBarOpened}
   >
