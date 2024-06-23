@@ -23,7 +23,7 @@ export const TimelineForCards: FC<Props> = ({ data }) => {
       {dataList.map((item, index) => (
         <TimelineItem key={index} sx={{ top: '150px' }}>
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color={item.totalAllowed > 5000 ? 'secondary' : 'primary'} />
             <TimelineConnector className={index != data.length - 1 ? 'show' : 'hide'} /> {/*add class*/}
           </TimelineSeparator>
           <TimelineContent sx={{ mt: '-150px' }}>

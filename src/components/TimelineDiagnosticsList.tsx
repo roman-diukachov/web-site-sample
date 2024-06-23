@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Chip, Typography } from '@mui/material';
 
 export const TimelineDiagnosticsList = ({ diagnostics }: { diagnostics: string[] }) => (
   <Box sx={{ mt: 2, mb: 2 }}>
@@ -6,7 +6,9 @@ export const TimelineDiagnosticsList = ({ diagnostics }: { diagnostics: string[]
       Diagnostics:
     </Typography>
     <Typography variant="body2" className="text-start">
-      {diagnostics.map((diagnostic) => `${diagnostic}  `)}
+      {diagnostics.map((diagnostic, index) => (
+        <Chip variant="outlined" label={diagnostic} key={index} />
+      ))}
     </Typography>
   </Box>
 );

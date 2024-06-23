@@ -1,4 +1,4 @@
-import { Link, ListItemButton, Paper, Typography } from '@mui/material';
+import { ListItemButton, Paper, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 import type { FC } from 'react';
@@ -18,16 +18,13 @@ export const TimelineCardList: FC<Props> = ({ codes }) => (
         <FixedSizeList width={300} height={110} itemSize={35} itemCount={codes.length} overscanCount={5}>
           {({ index, style }) => (
             <ListItem style={style} key={index} component="div" disablePadding>
-              <ListItemButton>
-                <Link
-                  className="codes-link"
-                  href={`https://www.aapc.com/codes/cpt-codes/${codes[index]}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={index}
-                >
-                  {codes[index]}
-                </Link>
+              <ListItemButton
+                component="a"
+                className="codes-link"
+                key={index}
+                href={`https://www.aapc.com/codes/cpt-codes/${codes[index]}`}
+              >
+                {codes[index]}
               </ListItemButton>
             </ListItem>
           )}

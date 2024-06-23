@@ -2,7 +2,7 @@ import type { Employer, Patient } from '@/types';
 import type { GridColDef } from '@mui/x-data-grid-premium';
 
 // TODO: this file will not exist in such a huge form
-//  because backand will cover such settings
+//  because backend will cover such settings
 
 export const SIDEBAR_WIDTH = 240;
 

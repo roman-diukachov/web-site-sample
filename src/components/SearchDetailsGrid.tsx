@@ -80,11 +80,6 @@ const DataGridPremium = <T extends object>({
   search,
 }: DataGridPremiumProps<T>) => {
   const gridApiRef = useGridApiRef();
-  // const filteredRows = rows.filter((row) =>
-  //   searchBarColumns.some(
-  //     (field) => field in row && (typeof row[field as keyof T] === 'string' ? (row[field as keyof T] as string).toLowerCase() : '').includes(search.toLowerCase())
-  //   )
-  // );
   const filteredRows = filterRows(rows, searchBarColumns, search);
 
   // for autosize the columns in every moment that content length changes
